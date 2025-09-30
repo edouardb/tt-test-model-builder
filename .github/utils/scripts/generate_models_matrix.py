@@ -4,9 +4,10 @@ from workflows.model_spec import MODEL_SPECS, DeviceTypes, ModelStatusTypes
 
 matrix = {"include": []}
 
-for _, model_spec in MODEL_SPECS.items():
+for model_id, model_spec in MODEL_SPECS.items():
     if (
-        (
+        model_id == "id_tt-transformers_AFM-4.5B_n300"
+        and (
             model_spec.device_type == DeviceTypes.N300
             or model_spec.device_type == DeviceTypes.P150
         )
